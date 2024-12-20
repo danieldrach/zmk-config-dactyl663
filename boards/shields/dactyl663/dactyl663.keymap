@@ -13,7 +13,7 @@
                 &kp CAPS   &kp A    &kp S    &kp D          &kp F     &kp G            &kp H     &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
                 &kp LSHIFT &kp Z    &kp X    &kp C          &kp V     &kp B            &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH   &kp RSHIFT
                 &kp LCTRL  &kp LGUI &kp LALT &kp DELETE                                                    &kp LBKT  &kp RBKT  &kp PG_DN  &kp PG_UP
-                                             &kp BACKSPACE  &ENTER    &kp ENTER        &kp ENTER &kp ESC   &kp SPACE
+                                             &kp BACKSPACE  &kp ENTER &kp ENTER        &kp ENTER &kp ESC   &kp SPACE
             >;
         };
     };
