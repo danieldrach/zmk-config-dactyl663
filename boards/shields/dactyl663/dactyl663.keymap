@@ -24,7 +24,7 @@
 
         keypad_arrows_layer{ // layer for keypad on the right half of the keyboard, arrows to the left and the bluetooth and flashing commands
             bindings = <
-                &bt BT_CLEAR  &bt BT_SEL_1  &bt BT_SEL_2  &bt BT_SEL_3  &none      &none            &none    &none    &kp FSLH   &kp STAR  &kp MINUS  &none 
+                &bt BT_CLR    &bt BT_SEL_1  &bt BT_SEL_2  &bt BT_SEL_3  &none      &none            &none    &none    &kp FSLH   &kp STAR  &kp MINUS  &none 
                 &none         &none         &none         &kp UP        &none      &none            &kp Y    &kp N7   &kp N8     &kp N9    &kp PLUS   &none
                 &none         &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT  &kp END          &kp H    &kp N4   &kp N5     &kp N6    &kp SEMI   &none
                 &none         &none         &none         &none         &none      &none            &kp N    &kp N1   &kp N2     &kp N3    &kp FSLH   &none
