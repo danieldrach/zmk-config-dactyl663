@@ -14,4 +14,7 @@ if SHIELD_DACTYL663_LEFT || SHIELD_DACTYL663_RIGHT
     config ZMK_SPLIT
         default y
 
+    config ZMK_SLEEP
+        default n 
+
 endif
