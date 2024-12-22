@@ -17,4 +17,7 @@ if SHIELD_DACTYL663_LEFT || SHIELD_DACTYL663_RIGHT
     config ZMK_SLEEP
         default n 
 
+    config ZMK_BATTERY_REPORTING
+        default y
+
 endif
