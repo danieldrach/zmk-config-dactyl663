@@ -28,19 +28,19 @@
                 &none         &none         &none         &kp UP          &none      &none            &kp Y    &kp N7   &kp N8     &kp N9    &kp MINUS  &none
                 &none         &kp HOME      &kp LEFT      &kp DOWN        &kp RIGHT  &kp END          &kp H    &kp N4   &kp N5     &kp N6    &kp PLUS   &none
                 &none         &none         &none         &none           &none      &none            &kp N    &kp N1   &kp N2     &kp N3    &kp EQUAL  &none
-                &sys_reset    &bootloader   &none         &kp RA(COMMA)                                                 &kp N0     &kp DOT   &none      &none
-                                                          &kp LC(BSPC)    &none      &none            &none    &none    &none
+                &sys_reset    &bootloader   &none         &none                                                 &kp N0     &kp DOT   &none      &none
+                                                          &none           &none      &none            &none    &none    &none
             >;
         };
 
         fn_layer{ // layer for arrow keys on the left half of the keyboard and function keys on the top
             bindings = <
-                &none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6   &kp F7  &kp F8    &kp F9  &kp F10      &kp F11
-                &none   &none   &none   &none   &none   &none            &none    &none   &none     &none   &none        &kp F12
-                &none   &none   &none   &none   &none   &none            &none    &none   &none     &none   &none        &none
-                &none   &none   &none   &none   &none   &none            &none    &none   &none     &none   &none        &none
-                &none   &none   &none   &none                                             &none     &none   &bootloader  &sys_reset
-                                        &none   &none   &none            &none    &none   &none
+                &none   &kp F1  &kp F2  &kp F3         &kp F4  &kp F5           &kp F6   &kp F7  &kp F8    &kp F9  &kp F10      &kp F11
+                &none   &none   &none   &none          &none   &none            &none    &none   &none     &none   &none        &kp F12
+                &none   &none   &none   &none          &none   &none            &none    &none   &none     &none   &none        &none
+                &none   &none   &none   &kp RA(COMMA)  &none   &none            &none    &none   &none     &none   &none        &none
+                &none   &none   &none   &none                                                    &none     &none   &bootloader  &sys_reset
+                                        &LC(BSPC)      &none   &none            &none    &none   &none
             >;
 
         };
