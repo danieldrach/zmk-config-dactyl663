@@ -40,7 +40,7 @@
                 &none   &none   &none   &none          &none   &none            &none    &none   &none     &none   &none        &none
                 &none   &none   &none   &kp RA(COMMA)  &none   &none            &none    &none   &none     &none   &none        &none
                 &none   &none   &none   &none                                                    &none     &none   &bootloader  &sys_reset
-                                        &LC(BSPC)      &none   &none            &none    &none   &none
+                                        &kp LC(BSPC)   &none   &none            &none    &none   &none
             >;
 
         };
