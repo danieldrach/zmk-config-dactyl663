@@ -8,6 +8,17 @@
 #define FN_LAYER 2 
 
 / {
+    behaviors {
+        bspc_del_word: backspace_delete_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp LC(BSPC)>;
+            mods = <(MOD_RSFT)>;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -18,7 +29,7 @@
                 &kp CAPS    &kp A     &kp S     &kp D          &kp F                &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI   &kp SQT
                 &kp LSHIFT  &kp Z     &kp X     &kp C          &kp V                &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH   &none
                 &kp LCTRL   &kp LGUI  &kp LALT  &kp DELETE                                                                &kp LBKT   &kp RBKT  &kp PSCRN  &mo FN_LAYER
-                                                &kp BACKSPACE  &mo KP_ARROWS_LAYER  &kp ESC        &kp ENTER  &kp RSHIFT  &kp SPACE
+                                                &bspc_del_word &mo KP_ARROWS_LAYER  &kp ESC        &kp ENTER  &kp RSHIFT  &kp SPACE
             >;
         };
 
