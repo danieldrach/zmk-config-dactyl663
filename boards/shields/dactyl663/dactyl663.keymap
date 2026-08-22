@@ -46,8 +46,8 @@
                 &none       &kp PG_UP     &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &none          &kp Y  &kp N7  &kp N8    &kp N9    &kp MINUS  &none
                 &none       &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT      &kp END        &kp H  &kp N4  &kp N5    &kp N6    &kp PLUS   &none
                 &trans      &kp PG_DN     &kp LC(X)     &kp LC(C)     &kp LC(V)      &none          &kp N  &kp N1  &kp N2    &kp N3    &kp EQUAL  &none
-                &none       &none         &none         &none                                                      &kp N0    &kp DOT   &none      &none
-                                                        &none         &none          &none          &none  &trans  &none
+                &none       &none         &none         &trans                                                     &kp N0    &kp DOT   &none      &none
+                                                        &trans        &none          &trans         &trans &trans  &trans
             >;
         };
 
@@ -57,8 +57,8 @@
                 &none   &none   &none   &none          &none   &none            &none    &none   &none     &none   &none     &kp F12
                 &none   &none   &none   &none          &none   &none            &none    &none   &none     &none   &none     &none
                 &trans  &none   &none   &kp RA(COMMA)  &none   &none            &none    &none   &none     &none   &none     &none
-                &none   &none   &none   &none                                                    &none     &none   &none     &none
-                                        &kp LC(BSPC)   &none   &none            &none    &trans  &none
+                &none   &none   &none   &trans                                                   &none     &none   &none     &none
+                                        &kp LC(BSPC)   &none   &trans           &trans   &trans  &trans
             >;
 
         };
