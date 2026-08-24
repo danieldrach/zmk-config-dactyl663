@@ -6,6 +6,7 @@
 #define DEFAULT 0 
 #define KP_ARROWS_LAYER 1 
 #define FN_LAYER 2 
+#define ARM_LAYER 3 
 
 / {
     behaviors {
@@ -16,18 +17,22 @@
             mods = <(MOD_RSFT)>;
         };
 
-        lsft_nav: left_shift_nav {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&mo KP_ARROWS_LAYER>;
-            mods = <(MOD_RSFT)>;
+        // Hold = right shift. Tap = arm ARM_LAYER briefly so that a following
+        // hold of the left thumb shift key activates the nav layer.
+        rsft_arm: right_shift_arm {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&sl_arm>;
         };
 
-        rsft_nav: right_shift_nav {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RSHIFT>, <&mo KP_ARROWS_LAYER>;
-            mods = <(MOD_LSFT)>;
+        // Sticky layer with a short window: the "fast-ish succession" timing.
+        sl_arm: sticky_layer_arm {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <400>;
         };
     };
 };
@@ -43,7 +48,7 @@
                 &kp CAPS    &kp A     &kp S     &kp D          &kp F                &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI   &kp SQT
                 &none       &kp Z     &kp X     &kp C          &kp V                &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH   &none
                 &kp LCTRL   &kp LGUI  &kp LALT  &kp DELETE                                                                &kp LBKT   &kp RBKT  &kp PSCRN  &mo FN_LAYER
-                                                &bspc_del_word &lsft_nav            &kp ESC        &kp ENTER  &rsft_nav   &kp SPACE
+                                                &bspc_del_word &kp LSHIFT           &kp ESC        &kp ENTER  &rsft_arm RSHIFT ARM_LAYER &kp SPACE
             >;
         };
 
@@ -70,5 +75,15 @@
 
         };
 
+        arm_layer { // Layer 3: briefly armed by tapping the right thumb shift; the left thumb shift then acts as nav layer key
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &mo KP_ARROWS_LAYER &trans &trans &trans &trans
+            >;
+        };
     };
 };
