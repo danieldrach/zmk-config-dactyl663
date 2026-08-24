@@ -15,19 +15,24 @@
             bindings = <&kp BACKSPACE>, <&kp LC(BSPC)>;
             mods = <(MOD_RSFT)>;
         };
+
+        lsft_nav: left_shift_nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>, <&mo KP_ARROWS_LAYER>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        rsft_nav: right_shift_nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RSHIFT>, <&mo KP_ARROWS_LAYER>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_nav_layer {
-            timeout-ms = <60>;
-            key-positions = <57 60>; // left thumb middle + right thumb middle
-            bindings = <&mo KP_ARROWS_LAYER>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -38,7 +43,7 @@
                 &kp CAPS    &kp A     &kp S     &kp D          &kp F                &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI   &kp SQT
                 &none       &kp Z     &kp X     &kp C          &kp V                &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH   &none
                 &kp LCTRL   &kp LGUI  &kp LALT  &kp DELETE                                                                &kp LBKT   &kp RBKT  &kp PSCRN  &mo FN_LAYER
-                                                &bspc_del_word &kp LSHIFT           &kp ESC        &kp ENTER  &kp RSHIFT  &kp SPACE
+                                                &bspc_del_word &lsft_nav            &kp ESC        &kp ENTER  &rsft_nav   &kp SPACE
             >;
         };
 
