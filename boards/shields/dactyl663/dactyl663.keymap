@@ -34,6 +34,14 @@
             bindings = <&mo>;
             release-after-ms = <400>;
         };
+
+        // Left shift normally; nav layer key while right shift is already held.
+        lsft_nav: left_shift_nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>, <&mo KP_ARROWS_LAYER>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 };
 
@@ -48,7 +56,7 @@
                 &kp CAPS    &kp A     &kp S     &kp D          &kp F                &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI   &kp SQT
                 &none       &kp Z     &kp X     &kp C          &kp V                &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH   &none
                 &kp LCTRL   &kp LGUI  &kp LALT  &kp DELETE                                                                &kp LBKT   &kp RBKT  &kp PSCRN  &mo FN_LAYER
-                                                &bspc_del_word &kp LSHIFT           &kp ESC        &kp ENTER  &rsft_arm RSHIFT ARM_LAYER &kp SPACE
+                                                &bspc_del_word &lsft_nav            &kp ESC        &kp ENTER  &rsft_arm RSHIFT ARM_LAYER &kp SPACE
             >;
         };
 
